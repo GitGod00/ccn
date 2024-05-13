@@ -1,0 +1,60 @@
+i have one router and three switches each switch is connected to two pcs 
+marketing has 25 , sales has 15 and hr has 10 the 
+ip 192.168.1.0/24 
+provide subnetting accordingly
+ChatGPT
+Alright, let's subnet the network according to your requirements:
+
+Given:
+
+Marketing requires 25 hosts.
+Sales requires 15 hosts.
+HR requires 10 hosts.
+IP range: 192.168.1.0/24
+To accommodate these requirements, we can subnet the network as follows:
+
+Marketing Department:
+
+Subnet: 192.168.1.0/27
+IP Range: 192.168.1.1 - 192.168.1.30
+Subnet Mask: 255.255.255.224 (/27)
+Broadcast Address: 192.168.1.31
+Default Gateway: 192.168.1.1
+Sales Department:
+
+Subnet: 192.168.1.32/28
+IP Range: 192.168.1.33 - 192.168.1.46
+Subnet Mask: 255.255.255.240 (/28)
+Broadcast Address: 192.168.1.47
+Default Gateway: 192.168.1.33
+HR Department:
+
+Subnet: 192.168.1.48/28
+IP Range: 192.168.1.49 - 192.168.1.62
+Subnet Mask: 255.255.255.240 (/28)
+Broadcast Address: 192.168.1.63
+Default Gateway: 192.168.1.49
+This configuration provides separate subnets for each department, each with sufficient addresses to accommodate their respective number of hosts.
+
+Now, let's assign each switch to its respective department and configure the router accordingly:
+
+Router Configuration:
+
+Interface connecting to Marketing VLAN:
+IP Address: 192.168.1.1
+Subnet Mask: 255.255.255.224 (/27)
+Interface connecting to Sales VLAN:
+IP Address: 192.168.1.33
+Subnet Mask: 255.255.255.240 (/28)
+Interface connecting to HR VLAN:
+IP Address: 192.168.1.49
+Subnet Mask: 255.255.255.240 (/28)
+Switch Configuration:
+
+Switch 1:
+Connected to Marketing and Sales Departments
+Switch 2:
+Connected to Marketing and HR Departments
+Switch 3:
+Connected to Sales and HR Departments
+Each switch should be configured with VLANs corresponding to their respective departments, and their ports should be appropriately assigned.
